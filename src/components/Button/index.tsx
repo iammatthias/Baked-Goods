@@ -2,17 +2,24 @@
 import React from "react";
 import Box from "../Box";
 import { buttonRecipe, ButtonVariants } from "./Button.css";
-import { themeClass } from "../../styles/styles.css";
 
 type Props = {
-  size?: string;
   kind?: string;
+  size?: string;
+  style?: string;
+  href?: string;
+  shadow?: boolean;
   children: React.ReactNode;
+  onclick?: () => void;
 } & ButtonVariants;
 
-export const Button = ({ children, size = "medium", kind = "primary" }: Props) => {
-  return (
-    <Box as='button' className={`${themeClass} ${buttonRecipe({ size, kind })}`}>
+export const Button = ({ kind, size, style, href, shadow, children, onclick }: Props) => {
+  return kind === "button-link" ? (
+    <a className={`${buttonRecipe({ size, style, shadow })}`} href={href} onClick={onclick}>
+      {children}
+    </a>
+  ) : (
+    <Box as='button' className={`${buttonRecipe({ size, style, shadow })}`} onClick={onclick}>
       {children}
     </Box>
   );

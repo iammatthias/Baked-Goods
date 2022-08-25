@@ -1,8 +1,6 @@
-// .storybook/manager.js
-
 import { addons } from "@storybook/addons";
-import bakedGoods from "./bakedGoods";
+import theme from "./theme";
 
 addons.setConfig({
-  theme: bakedGoods,
+  theme: theme,
 });

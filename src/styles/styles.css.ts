@@ -1,7 +1,7 @@
-import { createTheme } from "@vanilla-extract/css";
+import { createGlobalTheme } from "@vanilla-extract/css";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 
-export const [themeClass, vars] = createTheme({
+export const vars = createGlobalTheme(":root", {
   color: {
     black: "#000",
     nearBlack: "#111",
@@ -95,9 +95,10 @@ const layoutStyles = defineProperties({
     paddingLeft: vars.space,
     paddingRight: vars.space,
     margin: vars.space,
-    width: ["16px", "100%"],
+    width: ["16px", "100%", "auto", "fit-content"],
     fontSize: vars.fontSize,
     fontWeight: vars.fontWeight,
+    fontFamily: vars.font,
     borderRadius: vars.space,
     border: ["none", "2px solid", "4px solid", "8px solid"],
     borderColor: vars.color,
@@ -105,6 +106,7 @@ const layoutStyles = defineProperties({
     outlineColor: vars.color,
     color: vars.color,
     background: vars.color,
+    textDecoration: ["none", "underline"],
     // etc.
   },
   shorthands: {
