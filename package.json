@@ -1,0 +1,32 @@
+{
+  "name": "baked-goods",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.7.3",
+    "@vanilla-extract/recipes": "^0.2.5",
+    "@vanilla-extract/sprinkles": "^1.4.1",
+    "@vanilla-extract/vite-plugin": "^3.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@dessert-box/react": "^0.4.0",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@types/react": "^18.0.17",
+    "@vitejs/plugin-react": "^2.0.1",
+    "babel-loader": "^8.2.5",
+    "storybook-builder-vite": "^0.1.23",
+    "vite": "^3.0.9"
+  }
+}
