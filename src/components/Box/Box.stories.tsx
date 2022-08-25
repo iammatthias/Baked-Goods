@@ -11,6 +11,7 @@ export default {
   title: "Components/Box",
   component: Box,
   argTypes: {
+    as: { control: "text" },
     children: { control: "text" },
   },
 } as ComponentMeta<typeof Box>;
@@ -20,5 +21,7 @@ const Template: ComponentStory<typeof Box> = (args) => <Box {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
+  as: "div",
   children: "Box",
+  __background: "transparent",
 };

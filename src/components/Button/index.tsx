@@ -10,14 +10,19 @@ type Props = {
   href?: string;
   shadow?: boolean;
   children: React.ReactNode;
+  background?: string;
   onclick?: () => void;
 } & ButtonVariants;
 
-export const Button = ({ kind, size, style, href, shadow, children, onclick }: Props) => {
+export const Button = ({ kind, size, style, href, shadow, children, onclick, background }: Props) => {
   return kind === "button-link" ? (
-    <a className={`${buttonRecipe({ size, style, shadow })}`} href={href} onClick={onclick}>
+    <Box as='a' className={`${buttonRecipe({ size, style, shadow })}`} href={href} onClick={onclick}>
       {children}
-    </a>
+    </Box>
+  ) : style === "secondary" ? (
+    <Box as='button' className={`${buttonRecipe({ size, style, shadow })}`} onClick={onclick} __background={background} __outlineColor={background}>
+      {children}
+    </Box>
   ) : (
     <Box as='button' className={`${buttonRecipe({ size, style, shadow })}`} onClick={onclick}>
       {children}

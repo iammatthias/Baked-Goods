@@ -34,12 +34,6 @@ export const buttonRecipe = recipe({
         },
       }),
       secondary: atoms({
-        background: "gold",
-        color: "black",
-        outlineColor: {
-          default: "gold",
-          hover: "gold",
-        },
         outline: {
           default: "2px solid",
           hover: "4px solid",

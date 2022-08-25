@@ -16,9 +16,8 @@ export default {
     size: { control: { type: "select", options: ["small", "medium", "large"] } },
     style: { control: { type: "select", options: ["primary", "secondary"] } },
     children: { control: "text" },
-
     shadow: { control: "boolean" },
-    onclick: { action: "clicked" },
+    background: { control: "color", if: { arg: "style", eq: "secondary" } },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -31,18 +30,7 @@ Primary.args = {
   href: "https://www.google.com",
   size: "medium",
   style: "primary",
+  background: "transparent",
   shadow: true,
   children: "Button",
-  onclick,
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  kind: "button",
-  href: "https://www.google.com",
-  size: "medium",
-  style: "secondary",
-  shadow: true,
-  children: "Button",
-  onclick,
 };
